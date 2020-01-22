@@ -1,0 +1,17 @@
+redis:
+    enable: true
+    clusters:
+        -
+          name: redisClient1
+          prefix: test
+          serializer: org.ifaster.redis.serializer.FastJsonSerializer
+          cluster: localhost:6381,localhost:6382
+          password: 'test'
+          eventListener: org.ifaster.redis.listener.DefaultRedisEventListener
+        -
+          name: redisClient12
+          prefix: test2
+          serializer: org.ifaster.redis.serializer.FastJsonSerializer
+          cluster: localhost:6381,localhost:6382
+          password: 'test'
+          eventListener: org.ifaster.redis.listener.DefaultRedisEventListener
